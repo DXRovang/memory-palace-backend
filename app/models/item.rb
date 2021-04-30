@@ -1,3 +1,3 @@
 class Item < ApplicationRecord
-  belongs_to :Course
+  belongs_to :loci
 end

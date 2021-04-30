@@ -1,4 +1,5 @@
 class ItemSerializer < ActiveModel::Serializer
   attributes :id, :name
-  has_one :Course
+  belongs_to :loci
 end
+ 

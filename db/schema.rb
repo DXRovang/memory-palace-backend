@@ -10,23 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_29_231822) do
+ActiveRecord::Schema.define(version: 2021_04_30_202024) do
 
-  create_table "courses", force: :cascade do |t|
+  create_table "items", force: :cascade do |t|
     t.string "name"
-    t.integer "palace_id", null: false
+    t.integer "loci_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "item"
-    t.index ["palace_id"], name: "index_courses_on_palace_id"
+    t.index ["loci_id"], name: "index_items_on_loci_id"
+  end
+
+  create_table "locis", force: :cascade do |t|
+    t.string "name"
+    t.integer "Palace_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["Palace_id"], name: "index_locis_on_Palace_id"
   end
 
   create_table "palaces", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "loci"
   end
 
-  add_foreign_key "courses", "palaces"
+  add_foreign_key "items", "Courses", column: "loci_id"
+  add_foreign_key "locis", "Palaces"
 end

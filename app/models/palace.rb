@@ -1,3 +1,3 @@
 class Palace < ApplicationRecord
-  has_many :courses
+  has_many :locis
 end
