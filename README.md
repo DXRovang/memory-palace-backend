@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+bin/rails db:migrate RAILS_ENV=development
